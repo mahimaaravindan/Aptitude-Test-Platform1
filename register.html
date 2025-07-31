@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='image.png') }}" alt="College Logo">
+            </div>
+            <h1>Register for KSIT</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="register">
+                <h2>Register</h2>
+                <form id="registerForm" action="{{ url_for('register') }}" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; KSIT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

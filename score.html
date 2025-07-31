@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Score</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="score-content">
+                <p class="bold-text">You scored {{ score }} out of 10.</p>
+
+                {% if score >= 9 %}
+                    <img src="{{ url_for('static', filename='great_job.gif') }}" alt="Great Job" class="gif-large">
+                {% elif score >= 5 %}
+                    <img src="{{ url_for('static', filename='improve.gif') }}" alt="Improve" class="gif-medium">
+                {% elif score >= 2 %}
+                    <img src="{{ url_for('static', filename='low.gif') }}" alt="Low" class="gif-small">
+                {% else %}
+                    <p>Keep trying! Your score is below 2.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; KSIT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
